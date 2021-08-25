@@ -3,8 +3,8 @@ package com.bridgelabz.list;
 public class StackAndQueue {
     Node front,rear;
 
-    public void enqueue(int x) {
-        Node newNode=new Node(x);
+    public void enqueue(int key) {
+        Node newNode=new Node(key);
         if(isEmpty()){
             rear = newNode;
             front = newNode;
@@ -31,6 +31,14 @@ public class StackAndQueue {
             }
         }
     }
+    public void dequeue(){
+        if(isEmpty()){
+            System.out.println("nothing to delete");
+        }
+        else
+            front=front.next;
+
+    }
 
 
     public static void main(String[] args) {
@@ -39,6 +47,9 @@ public class StackAndQueue {
         list.enqueue(30);
         list.enqueue(70);
         System.out.println("The Elements of Queue are ");
+        list.display();
+        list.dequeue();
+        System.out.println("\nthe element after deletion in queue");
         list.display();
 
     }
